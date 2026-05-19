@@ -82,7 +82,7 @@ const LicenseModal = ({ onUnlock, onClose, gumroadUrl, productPermalink }) => {
         <h2>Unlock the Box of Hope</h2>
         
         <p className="license-description">
-          To open this sealed jar and access all **45 handwritten notes for tough days**, please support the 30-day turnaround challenge.
+          To open this sealed jar and access all <strong>45 notes of hope for tough days</strong>, please support the 30-day turnaround challenge.
         </p>
 
         <div className="pricing-box">

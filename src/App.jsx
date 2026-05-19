@@ -154,7 +154,7 @@ function App() {
         <div className="brand-subtitle">✨ 30-Day Turnaround Challenge</div>
         <h1 className="brand-title">The Box of Hope</h1>
         <p className="brand-desc">
-          When life feels heavy, pull a handwritten reminder from the jar. A simple, raw truth to get you through the next hour.
+          When life feels heavy, pull a reminder from the jar. A simple, raw truth to get you through the next hour.
         </p>
       </header>
 
@@ -170,7 +170,7 @@ function App() {
           <div className="lock-hero-card" aria-live="polite">
             <h2 className="lock-hero-title">🔒 The Box of Hope is Sealed</h2>
             <p className="lock-hero-body">
-              Inside are <strong>45 handwritten notes</strong> for the days you want to give up. Warm validation, raw truths, and comfort when life feels heavy.
+              Inside are <strong>45 encouraging notes</strong> for the days you want to give up. Warm validation, raw truths, and comfort when life feels heavy.
             </p>
             <p className="broke-story">
               Created by a broke 27-year-old trying to change his life before his 28th birthday. Your support feeds a dream.
