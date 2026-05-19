@@ -13,9 +13,31 @@ const GUMROAD_PRODUCT_URL = "https://jyotiraditya56.gumroad.com/l/mcfpgg";
 const GUMROAD_PRODUCT_PERMALINK = "mcfpgg"; 
 
 // Web Audio API sound synthesizers (no external dependencies, 100% reliable)
+let hopeJarAudioCtx = null;
+
+const initAudio = () => {
+  try {
+    if (!hopeJarAudioCtx) {
+      hopeJarAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (hopeJarAudioCtx && hopeJarAudioCtx.state === 'suspended') {
+      hopeJarAudioCtx.resume();
+    }
+  } catch (e) {
+    console.warn("AudioContext init failed", e);
+  }
+};
+
+// Expose globally for click handlers inside child components
+if (typeof window !== 'undefined') {
+  window.initHopeJarAudio = initAudio;
+}
+
 const playDrawSound = () => {
   try {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    initAudio();
+    if (!hopeJarAudioCtx) return;
+    const ctx = hopeJarAudioCtx;
     const now = ctx.currentTime;
     
     // Magical soft arpeggio: C4 -> E4 -> G4 -> C5
@@ -44,7 +66,9 @@ const playDrawSound = () => {
 
 const playSuccessSound = () => {
   try {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    initAudio();
+    if (!hopeJarAudioCtx) return;
+    const ctx = hopeJarAudioCtx;
     const now = ctx.currentTime;
     
     // Triumphant double chime: G5 -> C6
@@ -101,7 +125,20 @@ function App() {
     setParticles(generatedParticles);
   }, []);
 
+  // Disable body scroll when modal is open
+  useEffect(() => {
+    if (showLicenseModal || currentAffirmation) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [showLicenseModal, currentAffirmation]);
+
   const handleDraw = () => {
+    initAudio();
     if (!isUnlocked) {
       setShowLicenseModal(true);
       return;
@@ -175,7 +212,7 @@ function App() {
             <p className="broke-story">
               Created by a broke 27-year-old trying to change his life before his 28th birthday. Your support feeds a dream.
             </p>
-            <button className="unlock-now-btn" onClick={() => setShowLicenseModal(true)}>
+            <button className="unlock-now-btn" onClick={() => { initAudio(); setShowLicenseModal(true); }}>
               Unlock the Box ($5)
             </button>
           </div>

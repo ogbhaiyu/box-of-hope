@@ -20,6 +20,11 @@ const LicenseModal = ({ onUnlock, onClose, gumroadUrl, productPermalink }) => {
     e.preventDefault();
     if (!licenseKey.trim()) return;
 
+    // Initialize audio context in direct user gesture to enable verification sounds
+    if (typeof window !== 'undefined' && window.initHopeJarAudio) {
+      window.initHopeJarAudio();
+    }
+
     setStatus('loading');
     setErrorMessage('');
 

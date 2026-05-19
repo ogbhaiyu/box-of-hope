@@ -282,9 +282,7 @@ body {
 .scroll-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(7, 5, 13, 0.98);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: #07050d;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -447,9 +445,7 @@ body {
 .license-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(7, 5, 13, 0.98);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: #07050d;
   display: flex;
   align-items: center;
   justify-content: center;
