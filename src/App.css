@@ -419,13 +419,112 @@ body {
   border: none;
 }
 
-.scroll-action-btn.share {
+.scroll-meditation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: #7d6b5c;
+  margin-bottom: 28px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(160, 82, 45, 0.04);
+  border: 1px dashed rgba(160, 82, 45, 0.15);
+  animation: breathing-glow 3s ease-in-out infinite alternate;
+}
+
+.meditation-step {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+@keyframes breathing-glow {
+  0% {
+    box-shadow: 0 0 5px rgba(160, 82, 45, 0.03);
+    background: rgba(160, 82, 45, 0.03);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(160, 82, 45, 0.1);
+    background: rgba(160, 82, 45, 0.08);
+  }
+}
+
+.share-section-title {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.share-buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  width: 100%;
+}
+
+.share-grid-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--color-text-light);
+  cursor: pointer;
+  transition: var(--transition-standard);
+}
+
+.share-grid-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.share-grid-btn.whatsapp:hover {
+  background: rgba(37, 211, 102, 0.12);
+  border-color: rgba(37, 211, 102, 0.25);
+  color: #25d366;
+}
+
+.share-grid-btn.twitter:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.share-grid-btn.facebook:hover {
+  background: rgba(24, 119, 242, 0.12);
+  border-color: rgba(24, 119, 242, 0.25);
+  color: #1877f2;
+}
+
+.share-grid-btn.native:hover {
+  background: linear-gradient(135deg, rgba(225, 48, 108, 0.1) 0%, rgba(64, 93, 230, 0.1) 100%);
+  border-color: rgba(225, 48, 108, 0.25);
+  color: #e1306c;
+}
+
+.scroll-action-btn.copy {
   background: linear-gradient(135deg, #ffd700 0%, #daa520 100%);
   color: #120b00;
   box-shadow: 0 4px 15px rgba(255, 215, 0, 0.25);
+  margin-top: 4px;
 }
 
-.scroll-action-btn.share:hover {
+.scroll-action-btn.copy:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(255, 215, 0, 0.35);
 }
