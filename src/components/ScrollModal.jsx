@@ -26,7 +26,7 @@ const ScrollModal = ({ affirmation, onClose }) => {
       try {
         await navigator.share({
           title: 'Box of Hope',
-          text: `✨ Note from the Box of Hope ✨\n\n"${affirmation.text}"`,
+          text: textToShare,
           url: window.location.origin,
         });
       } catch (err) {
@@ -60,9 +60,7 @@ const ScrollModal = ({ affirmation, onClose }) => {
             <span className="scroll-category-badge">{affirmation.category}</span>
             <p className="scroll-text">"{affirmation.text}"</p>
             <div className="scroll-divider">🌸</div>
-            <p className="scroll-footer meditation-prompt">
-              🧘 Close your eyes, take a deep breath, and let these words sink in.
-            </p>
+            <p className="scroll-footer">Take a moment to let this sink in.</p>
           </div>
         </div>
         
