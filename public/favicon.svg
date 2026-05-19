@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Soft warm background glow -->
+  <circle cx="100" cy="100" r="95" fill="rgba(255, 215, 0, 0.15)" />
+  <circle cx="100" cy="100" r="70" fill="rgba(255, 140, 0, 0.12)" />
+
+  <g transform="translate(15, -30) scale(0.85)">
+    <!-- Lid -->
+    <path d="M70 20C70 14.4772 74.4772 10 80 10H120C125.523 10 130 14.4772 130 20V30H70V20Z" fill="#ffd700" stroke="#b8860b" stroke-width="2"/>
+    <rect x="65" y="30" width="70" height="8" rx="4" fill="#d4af37" stroke="#b8860b" stroke-width="1.5"/>
+    
+    <!-- Jar Neck -->
+    <rect x="75" y="38" width="50" height="20" fill="rgba(255, 255, 255, 0.25)" stroke="rgba(255, 255, 255, 0.4)" stroke-width="2"/>
+    
+    <!-- Ribbon around neck -->
+    <path d="M72 45H128V53H72V45Z" fill="#e25858" rx="2"/>
+    <circle cx="100" cy="49" r="5" fill="#ffd700"/>
+    
+    <!-- Jar Body -->
+    <path d="M75 58C60 68 50 85 50 110V220C50 245 70 265 95 265H105C130 265 150 245 150 220V110C150 85 140 68 125 58V58H75Z" 
+      fill="rgba(255, 255, 255, 0.12)" 
+      stroke="rgba(255, 255, 255, 0.8)" 
+      stroke-width="5"
+      stroke-linejoin="round"
+    />
+    
+    <!-- Inside Liquid/Glow base -->
+    <path d="M54 130V220C54 240 70 256 90 256H110C130 256 146 240 146 220V130C146 130 120 140 100 130C80 120 54 130 54 130Z" 
+      fill="url(#innerGlowFavicon)"
+    />
+    
+    <!-- Label inside jar -->
+    <g>
+      <rect x="72" y="150" width="56" height="35" rx="3" fill="#faf0e6" stroke="#d2b48c" stroke-width="2"/>
+      <text x="100" y="167" text-anchor="middle" fill="#5c4033" font-size="10" font-weight="bold" font-family="sans-serif">HOPE</text>
+      <text x="100" y="179" text-anchor="middle" fill="#e25858" font-size="11" font-weight="bold" font-family="sans-serif">JAR</text>
+    </g>
+
+    <!-- Reflections/Highlights -->
+    <path d="M60 110C60 90 68 78 78 70" stroke="rgba(255, 255, 255, 0.6)" stroke-width="4" stroke-linecap="round"/>
+    
+    <!-- Glowing stars inside -->
+    <circle cx="80" cy="120" r="3.5" fill="#fff" />
+    <circle cx="120" cy="100" r="4.5" fill="#ffe4b5" />
+    <circle cx="95" cy="225" r="4" fill="#fff" />
+    <circle cx="130" cy="195" r="5" fill="#fff" />
+  </g>
+
+  <defs>
+    <radialGradient id="innerGlowFavicon" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="rgba(255, 215, 0, 0.7)" />
+      <stop offset="60%" stop-color="rgba(255, 140, 0, 0.35)" />
+      <stop offset="100%" stop-color="rgba(255, 69, 0, 0)" />
+    </radialGradient>
+  </defs>
+</svg>
